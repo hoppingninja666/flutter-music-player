@@ -26,3 +26,9 @@ jobs:
         # AGP's bug: lintRelease do check debug/lib.jar cause build release apk fail
         # so we decide temporary build debug apk before bug has been fixed.
         run: cd example && flutter build apk --debug --split-per-abi
+    - name: flutter - Archive production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: example/build/app/outputs/flutter-apk
+
